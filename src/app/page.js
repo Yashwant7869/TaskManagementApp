@@ -110,7 +110,7 @@ export default function Home() {
             <span className="ml-2 text-lg font-bold">TaskMaster</span>
           </div>
           <p className="text-gray-400">
-            © 2024 TaskMaster. Built with Next.js and TailwindCSS.
+            © 2025 TaskMaster.
           </p>
         </div>
       </footer>

@@ -162,12 +162,11 @@ export default function DashboardPage() {
       fetchTasks(newFilters);
     }
   };
-
   // Logout
   const handleLogout = async () => {
     try {
       await fetch('/api/auth/logout', { method: 'POST' });
-      router.push('/auth/login');
+      router.push('/'); // Redirect to landing page
     } catch (error) {
       console.error('Logout error:', error);
     }
@@ -219,7 +218,7 @@ export default function DashboardPage() {
                 variant="outline"
                 size="sm"
                 onClick={handleLogout}
-                className="flex items-center space-x-2"
+                className="flex items-center space-x-2 text-gray-700 hover:text-gray-900"
               >
                 <LogOut className="h-4 w-4" />
                 <span>Logout</span>
@@ -263,7 +262,7 @@ export default function DashboardPage() {
         <div className="bg-white rounded-lg shadow p-6 mb-8">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             <div className="flex flex-col sm:flex-row gap-4 flex-1">
-              <div className="relative flex-1 sm:max-w-xs">
+              <div className="relative flex-1 sm:max-w-xs text-black">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" />
                 <Input
                   placeholder="Search tasks..."
@@ -275,7 +274,7 @@ export default function DashboardPage() {
               <Select
                 value={filters.category}
                 onChange={(e) => handleFilterChange('category', e.target.value)}
-                className="sm:w-48"
+                className="sm:w-48 text-black"
               >
                 {categories.map((category) => (
                   <option key={category.value} value={category.value}>
@@ -286,7 +285,7 @@ export default function DashboardPage() {
               <Select
                 value={filters.status}
                 onChange={(e) => handleFilterChange('status', e.target.value)}
-                className="sm:w-40"
+                className="sm:w-40 text-black"
               >
                 {statuses.map((status) => (
                   <option key={status.value} value={status.value}>
