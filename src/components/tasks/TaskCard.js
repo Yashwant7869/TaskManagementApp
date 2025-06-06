@@ -71,7 +71,7 @@ export default function TaskCard({ task, onEdit, onDelete, onToggleStatus }) {
               )}
             </Button>
 
-            <div className="flex-1 min-w-0">
+            <div  className="flex-1 min-w-0">
               <h3 className={cn(
                 'font-medium text-gray-900',
                 task.status === 'completed' && 'line-through text-gray-500'
