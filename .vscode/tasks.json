@@ -1,0 +1,50 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Start Development Server",
+			"type": "shell",
+			"command": "npm run dev",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [],
+			"args": []
+		},
+		{
+			"label": "Build Production",
+			"type": "shell",
+			"command": "npm run build",
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": [],
+			"args": []
+		},
+		{
+			"label": "Start Production Server",
+			"type": "shell",
+			"command": "npm run start",
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": [],
+			"args": []
+		},
+		{
+			"label": "Lint Code",
+			"type": "shell",
+			"command": "npm run lint",
+			"group": "test",
+			"isBackground": false,
+			"problemMatcher": ["$eslint-stylish"],
+			"args": []
+		},
+		{
+			"label": "Install Dependencies",
+			"type": "shell",
+			"command": "npm install",
+			"group": "build",
+			"isBackground": false,
+			"problemMatcher": [],
+			"args": []
+		}
+	]
+}
