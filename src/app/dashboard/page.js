@@ -37,16 +37,10 @@ export default function DashboardPage() {
 		category: 'all',
 		status: 'all',
 	});
-	const [isTaskFormOpen, setIsTaskFormOpen] = useState(false);
-	const [editingTask, setEditingTask] = useState(null);
+	const [isTaskFormOpen, setIsTaskFormOpen] = useState(false);	const [editingTask, setEditingTask] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
-	const router = useRouter(); // Search function without debouncing for now
-	const handleSearch = useCallback(
-		(searchFilters) => {
-			fetchTasks(searchFilters);
-		},
-		[fetchTasks]
-	);
+	const router = useRouter();
+
 	// Fetch user data
 	const fetchUser = useCallback(async () => {
 		try {
@@ -152,14 +146,13 @@ export default function DashboardPage() {
 		} catch (error) {
 			console.error('Error updating task status:', error);
 		}
-	};
-	// Handle filter changes
+	};	// Handle filter changes
 	const handleFilterChange = (key, value) => {
 		const newFilters = { ...filters, [key]: value };
 		setFilters(newFilters);
 
-		// Use handleSearch for all filter changes
-		handleSearch(newFilters);
+		// Call fetchTasks directly for all filter changes
+		fetchTasks(newFilters);
 	};
 	// Logout
 	const handleLogout = async () => {
@@ -313,8 +306,7 @@ export default function DashboardPage() {
 							</Button>
 						</div>
 					) : (
-						tasks.map((task) => (
-							<TaskCard
+						tasks.map((task) => (							<TaskCard
 								key={task._id}
 								task={task}
 								onEdit={handleEditTask}
@@ -322,7 +314,7 @@ export default function DashboardPage() {
 								onToggleStatus={handleToggleTaskStatus}
 							/>
 						))
-					}
+					)}
 				</div>
 			</main>
 
