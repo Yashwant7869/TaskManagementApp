@@ -113,10 +113,8 @@ export default function LoginForm() {
               >
                 {isLoading ? 'Signing in...' : 'Sign in'}
               </Button>
-            </form>
-
-            <div className="mt-4 text-center text-sm">
-              Don't have an account?{' '}
+            </form>            <div className="mt-4 text-center text-sm">
+              Don&apos;t have an account?{' '}
               <Link href="/auth/register" className="text-blue-600 hover:underline">
                 Sign up
               </Link>
