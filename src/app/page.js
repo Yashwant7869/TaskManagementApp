@@ -10,7 +10,7 @@ export default function Home() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <CheckSquare className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">TaskMaster</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">Plan<span className="text-blue-700">Up</span></span>
             </div>
             <div className="flex items-center space-x-4">
               <Link
@@ -91,7 +91,7 @@ export default function Home() {
             Ready to Get Organized?
           </h2>
           <p className="text-lg text-gray-600 mb-6">
-            Join thousands of users who have already transformed their productivity with TaskMaster.
+            Join thousands of users who have already transformed their productivity with <span className="text-black font-bold">Plan<span className="text-blue-700">Up</span></span>.
           </p>
           <Link
             href="/auth/register"
@@ -103,14 +103,14 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8 mt-16">
+      <footer className="bg-black text-white py-8 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center mb-4">
             <CheckSquare className="h-6 w-6 text-blue-400" />
-            <span className="ml-2 text-lg font-bold">TaskMaster</span>
+            <span className="ml-2 text-lg font-bold">Plan<span className="text-blue-700">Up</span></span>
           </div>
           <p className="text-gray-400">
-            © 2025 TaskMaster.
+            © 2025 PlanUp.
           </p>
         </div>
       </footer>
